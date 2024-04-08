@@ -112,17 +112,19 @@ def gerchbergSaxton(im,maxIters,Dphi,mask):
         phase = IMp + lt*Dphi
         
         im = idft2(IMa,phase)
+        errors.append(occultError(im, mask))
         images.append(im)
-        occultError()
     
-    return images, sum(errors)
+    return images, errors
 
 def occultError(im,mask):
-    error - []
-
-    for rows in im:
-        for col in im:
-            if 
+    error = []
+    if mask is True:
+        for datum in im:
+            error.append(sum(datum)**2)
+        return sum(error)
+    else:
+        return 0
 
 
 
